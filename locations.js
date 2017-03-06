@@ -53,27 +53,9 @@ $(document).ready(function(){
 //   pastHeading: '<h2>Past events</h2>',
 //   format: ['*date*', ': ', '*summary*', ' — ', '*description*', ' in ', '*location*']
 // }); 
-  
-var iFrame = $('#googleCal').contents().find("html");
-var xFrame = iFrame.children().html();
-console.log(iFrame);
-  console.log(xFrame);
-  
 
-//   $.ajax({
-// 		url: $("iframe#googleCal").attr("src"),
-// 		type: 'GET',
-// 		dataType: 'html'
-// 	}).done(function(html) {
-// 		console.log("PART 2:: ");
-// 		console.log(html);
-// 	});
+
   
-  
-  var $iFrameContents = $('iframe').contents(),
-    $entryContent   = $iFrameContents.find('div.entry-content');
-         
-$iFrameContents.find('html').replaceWith($entryContent);
 });
 
 
