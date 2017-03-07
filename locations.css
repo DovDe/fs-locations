@@ -1,5 +1,5 @@
 .datepicker {
-  margin: 2em;
+/*   margin: 2em; */
 }
 
 a.navbar-brand img  {
@@ -22,7 +22,7 @@ background-color: #3ebe29;
 }
 
 #datepicker{
-  margin-top:5em;
+/*   margin-top:5em; */
 }
 
 .responsiveCal {
@@ -39,7 +39,9 @@ position: absolute; top:0; left: 0; width: 100%; height: 100%;
 
 /* GLOBAL STYLES
 -------------------------------------------------- */
-
+.location-1 {
+  margin: 1em 0 10em 0;
+}
 
 
 /* CUSTOMIZE THE NAVBAR
@@ -118,7 +120,29 @@ position: absolute; top:0; left: 0; width: 100%; height: 100%;
 
 }
 
+  @media (min-width: 992px){
+  .location-info {
+  background-image: url("design_work/west-seattle-market.jpg");
+  background-repeat: none;
+  background-size:cover;  
+   height: 300px;
 
+}
+
+.location-image{
+   background-color: gray;
+   padding: 0;
+   height: 20em;
+   overflow: hidden;
+
+
+ }
+.location-image img {
+  width: 100%;
+  object-fit: fill;
+  margin:0;
+}
+}
 
 
   @media (max-width: 768px) {
@@ -186,27 +210,7 @@ font-size: 100%;
 
 
 }
-@media (min-width: 992px){
-  .location-info {
-  background-color: gray;
-   height: 20em;
 
-}
-
-.location-image{
-   background-color: gray;
-  padding: 0;
-     height: 20em;
-   overflow: hidden;
-
-
- }
-.location-image img {
-  width: 100%;
-  object-fit: cover;
-  margin:0;
-}
-}
 
 @media (max-width: 991px){
   
@@ -259,3 +263,4 @@ font-size: 100%;
       
     }
 }
+

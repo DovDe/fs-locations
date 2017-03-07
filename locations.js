@@ -1,5 +1,6 @@
 $(document).ready(function(){
   
+  
 //------------------------carousel and subnav sizing and loading-----------------  
   
   // checking the intial window size to figure out if the carousel needs to be loaded
@@ -63,8 +64,13 @@ $(document).ready(function(){
   
  
   // current day value for loading correct day into page.
-  var today = new Date();
+var today = new Date();
 var todaysDay = today.getUTCDay();
+  
+  // loading current date
+   var todaysDateLoad = $("<p></p>").text(" " + today);   
+  $('.visible-location').append(todaysDateLoad);
+  
   
  if(todaysDay === 0){
    $(".map-container").load('html/weekdays/sunday.html');
@@ -93,8 +99,7 @@ var todaysDay = today.getUTCDay();
     var selectedDay =  new Date(selected);
     var selectedWeekDay = selectedDay.getUTCDay(); 
       
-      $('.map-container').empty();
-      
+            
     if(selectedWeekDay === 0){
    $(".map-container").load('html/weekdays/sunday.html');
  }else if (selectedWeekDay===1) {
