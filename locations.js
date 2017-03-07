@@ -61,9 +61,57 @@ $(document).ready(function(){
   
   //--------------------- load locations code----------------------------------
   
-         $(".map-container").load('html/location-info.html');
-
+ 
+  // current day value for loading correct day into page.
+  var today = new Date();
+var todaysDay = today.getUTCDay();
   
+ if(todaysDay === 0){
+   $(".map-container").load('html/weekdays/sunday.html');
+ }else if (todaysDay===1) {
+   $(".map-container").load('html/weekdays/monday.html');
+ }else if (todaysDay ===2){
+   $(".map-container").load('html/weekdays/tuesday.html');
+ }else if (todaysDay===3) {
+   $(".map-container").load('html/weekdays/wednesday.html');
+ }else if (todaysDay===4) {
+   $(".map-container").load('html/weekdays/thursday.html');
+ }else if (todaysDay===5) {
+   $(".map-container").load('html/weekdays/friday.html');
+ }else{
+   $(".map-container").load('html/weekdays/saturday.html');
+ }
+         
+
+
+
+ 
+     
+    
+    $("#datepicker").on("change",function(){
+     var selected = $('input').val();        
+    var selectedDay =  new Date(selected);
+    var selectedWeekDay = selectedDay.getUTCDay(); 
+      
+      $('.map-container').empty();
+      
+    if(selectedWeekDay === 0){
+   $(".map-container").load('html/weekdays/sunday.html');
+ }else if (selectedWeekDay===1) {
+   $(".map-container").load('html/weekdays/monday.html');
+ }else if (selectedWeekDay ===2){
+   $(".map-container").load('html/weekdays/tuesday.html');
+ }else if (selectedWeekDay===3) {
+   $(".map-container").load('html/weekdays/wednesday.html');
+ }else if (selectedWeekDay===4) {
+   $(".map-container").load('html/weekdays/thursday.html');
+ }else if (selectedWeekDay===5) {
+   $(".map-container").load('html/weekdays/friday.html');
+ }else{
+   $(".map-container").load('html/weekdays/saturday.html');
+ }
+    });
+
   
 }); //close document ready
 
