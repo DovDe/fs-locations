@@ -1,5 +1,7 @@
 $(document).ready(function(){
   
+//------------------------carousel and subnav sizing and loading-----------------  
+  
   // checking the intial window size to figure out if the carousel needs to be loaded
   // and if the sub nav bar needs to be hidden
  if (window.matchMedia('(min-width: 769px)').matches)  {
@@ -11,7 +13,7 @@ $(document).ready(function(){
           
        $('.subnav').hide();
           
-        }
+        } //close if match media
   
   
   
@@ -22,23 +24,24 @@ $(document).ready(function(){
          
     // do functionality on screens smaller than 768px
        $(".carousel-container").load('html/carousel.html');
-             $('.subnav').show();
-   
-       
+             $('.subnav').show();    
         
         } else {
-         $('.subnav').hide();
-
+         $('.subnav').hide(); 
           
           if ($(".carousel-container")) {
            $("#myCarousel").remove(); 
             
-          }
-        }
+          } //close inner if
+        }   //close else
+   
+   
+}); // close resize function
   
-}); 
   
+//^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^end carousel and subnav sizing and loading^^^^^^^^^^^^^^^^^^^^^^^  
   
+// ---------this section is code for the google calendar API for the futer it works but needs a lot of refining----------------  
 //  formatGoogleCalendar.init({
 //   calendarUrl: 'https://www.googleapis.com/calendar/v3/calendars/206falafel@gmail.com/events?key=AIzaSyA53EZSYkkFTgtuMmazeqJo1Jco8MiV4YQ',
 //   past: false,
@@ -54,9 +57,15 @@ $(document).ready(function(){
 //   format: ['*date*', ': ', '*summary*', ' — ', '*description*', ' in ', '*location*']
 // }); 
 
+//^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^end of future google calendar code^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  
+  //--------------------- load locations code----------------------------------
+  
+         $(".map-container").load('html/location-info.html');
 
   
-});
+  
+}); //close document ready
 
 
     
