@@ -188,11 +188,17 @@ font-size: 1em;
     font-size: 50px;
   }
     
-    .location-image{
+  body { 
+    padding-top: 85px; 
+}
+.featurette-heading {
+    margin-top: 120px;
+  }
+.location-image{
    background-image: url("design_work/west-seattle-market.jpg");
    background-size: cover;
    padding: 0;
-   height: 24em;
+   max-height: 15em;
    overflow: hidden;
 
  }
@@ -204,21 +210,12 @@ height:12em;
 .info-content {
 padding: 1em;
 font-size: 1em;
+}  
+   .datepicker{
+    clear: both;
+    margin-top: 100em;
+  }
 }
-
-.location-info {
- height: 10em;
-   padding: 0;
-}
-
-
-.location-info h4 {
-margin:0;
-font-size: 100%;
-
-}
-
-
 }
 
   @media (max-width: 480px){
