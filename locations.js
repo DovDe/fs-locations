@@ -68,11 +68,89 @@ var today = new Date();
 var todaysDay = today.getUTCDay();
   
   // loading current date
-   var todaysDateLoad = $("<p></p>").text(" " + today);   
+  var todaysDateLoad = $("<p class='loadDate'></p>").text(" " + today);   
   $('.visible-location').append(todaysDateLoad);
   
+  var monthsOfYear= ['January',
+            'February',
+            'March',
+            'April',
+            'May',
+            'June',
+            'July',
+            'August',
+            'September',
+            'October',
+            'November',
+            'December'];
+      var dayOfWeek = [
+        'Sunday',
+            'Monday',
+            'Tuesday',
+            'Wednesday',
+            'Thursday',
+            'Friday',
+            'Saturday'
+      ];
+
+
+
+
+ 
+     // changing datepicker changes html content
+    
+    $("#datepicker").on("change",function(){
+     var selected = $('input').val();  
+      console.log(selected);
+     
+      
+      var selectedDay =  new Date(selected);
+      
+      var day =(selectedDay.getUTCDate());
+      var month=(selectedDay.getUTCMonth());
+      var year = (selectedDay.getUTCFullYear());
+     
+      
+      
+      
+      var selectedWeekDay = selectedDay.getUTCDay(); 
+      console.log(selectedWeekDay);
+      
+      
+      
+      var selectedMonth = monthsOfYear[month];
+      console.log(selectedMonth);
+      
+      
+    if(selectedWeekDay === 0){            
+   $(".map-container").load('html/weekdays/sunday.html');
+      $('.visible-location').replaceWith((selectedMonth)+'-'+(day)+'-'+(year));
+ }else if (selectedWeekDay===1) {      
+   $(".map-container").load('html/weekdays/monday.html');
+    $('.visible-location').replaceWith((selectedMonth)+'-'+(day)+'-'+(year));
+ }else if (selectedWeekDay ===2){       
+   $(".map-container").load('html/weekdays/tuesday.html');
+   $('.visible-location').replaceWith((selectedMonth)+'-'+(day)+'-'+(year));
+ }else if (selectedWeekDay===3) {        
+   $(".map-container").load('html/weekdays/wednesday.html');
+   $('.visible-location').replaceWith((selectedMonth)+'-'+(day)+'-'+(year));
+ }else if (selectedWeekDay===4) {  
+   $(".map-container").load('html/weekdays/thursday.html');
+   $('.visible-location').replaceWith((selectedMonth)+'-'+(day)+'-'+(year));
+ }else if (selectedWeekDay===5) {   
+   $(".map-container").load('html/weekdays/friday.html');
+   $('.visible-location').replaceWith((selectedMonth)+'-'+(day)+'-'+(year));
+ }else{     
+   $(".map-container").load('html/weekdays/saturday.html');
+   $('.visible-location').replaceWith((selectedMonth)+'-'+(day)+'-'+(year));
   
- if(todaysDay === 0){
+ }
+    });
+
+  
+ // on load the current date is automatically loaded 
+  
+   if(todaysDay === 0){
    $(".map-container").load('html/weekdays/sunday.html');
  }else if (todaysDay===1) {
    $(".map-container").load('html/weekdays/monday.html');
@@ -88,35 +166,6 @@ var todaysDay = today.getUTCDay();
    $(".map-container").load('html/weekdays/saturday.html');
  }
          
-
-
-
- 
-     
-    
-    $("#datepicker").on("change",function(){
-     var selected = $('input').val();        
-    var selectedDay =  new Date(selected);
-    var selectedWeekDay = selectedDay.getUTCDay(); 
-      
-            
-    if(selectedWeekDay === 0){
-   $(".map-container").load('html/weekdays/sunday.html');
- }else if (selectedWeekDay===1) {
-   $(".map-container").load('html/weekdays/monday.html');
- }else if (selectedWeekDay ===2){
-   $(".map-container").load('html/weekdays/tuesday.html');
- }else if (selectedWeekDay===3) {
-   $(".map-container").load('html/weekdays/wednesday.html');
- }else if (selectedWeekDay===4) {
-   $(".map-container").load('html/weekdays/thursday.html');
- }else if (selectedWeekDay===5) {
-   $(".map-container").load('html/weekdays/friday.html');
- }else{
-   $(".map-container").load('html/weekdays/saturday.html');
- }
-    });
-
   
 }); //close document ready
 
