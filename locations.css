@@ -1,12 +1,6 @@
-.datepicker {
-/*   margin: 2em; */
-}
-
 a.navbar-brand img  {
   max-height: 100%;
 }
-
-
 footer{
 margin-top: 2em;  
 margin-bottom: 0;
@@ -14,42 +8,35 @@ padding-bottom: 0;
 height: 50px;
 background-color: #3ebe29;  
 }
-.subnav{
-  margin: 0;
-  padding: 0;
-  background-color: #3ebe29;
-  height: 1px;
-}
-
-#datepicker{
-/*   margin-top:5em; */
-}
-
-/* .responsiveCal {
- 
-position: relative; padding-bottom: 75%; height: 0; overflow: hidden;
- 
-}
- 
-.responsiveCal iframe {
- 
-position: absolute; top:0; left: 0; width: 100%; height: 100%;
- 
-} */
 
 /* GLOBAL STYLES
 -------------------------------------------------- */
+
 .location-1 {
   margin: 1em 0 10em 0;
 }
+.location-head {
+color: #3ebe29;
+padding: 0.5em;
+}
 
 .info-content {
-  background-color: rgba(0,0,0, 0.15);
+  background-color: #333;
+  color: whitesmoke;
   margin: 0;
   padding: 0;
 }
 .location-info {
+  
+  border:solid #3ebe29 3px; 
   padding: 0;
+  margin: 0;
+}
+.map-container{
+  padding:0;
+}
+.nav {
+  margin-bottom: 1em;
 }
 
 /* CUSTOMIZE THE NAVBAR
@@ -75,6 +62,14 @@ position: absolute; top:0; left: 0; width: 100%; height: 100%;
   width: auto;
   border-bottom:solid #960987 6px;
 }
+
+.map {
+  width: 100%;
+  padding: 0;
+  height: 12em;
+  overflow: hidden;
+}
+
 
 
 /* CUSTOMIZE THE CAROUSEL
@@ -113,46 +108,59 @@ position: absolute; top:0; left: 0; width: 100%; height: 100%;
 
 
 
-.map {
-  width: 100%;
-  padding: 0;
-  height: 20em;
-  overflow: hidden;
-  background-color: lightgray;
-}
-.map img {
-  width: 100%;
-  margin: 0;
-  padding: 0;
- object-fit: cover;
-
-}
 
   @media (min-width: 992px){
-  .location-info {
-  background-image: url("design_work/west-seattle-market.jpg");
-  background-repeat: none;
-  background-size:cover;  
-   height: 300px;
 
-}
 
 .location-image{
-   background-color: gray;
+   background-image: url("design_work/west-seattle-market.jpg");
+   background-size: cover;
    padding: 0;
-   height: 20em;
+   height: 24em;
    overflow: hidden;
 
+ }
+
+.map{
+height:12em;
+}
+
+.info-content {
+padding: 1em;
+font-size: 1em;
+}
+}  /*-------- end min-width 992-------- */
+
+
+@media (max-width: 991px){
+ body { 
+    padding-top: 85px; 
+}
+.featurette-heading {
+    margin-top: 120px;
+  }
+.location-image{
+   background-image: url("design_work/west-seattle-market.jpg");
+   background-size: cover;
+   padding: 0;
+   max-height: 15em;
+   overflow: hidden;
 
  }
-.location-image img {
-  width: 100%;
-  object-fit: fill;
-  margin:0;
-}
+
+.map{
+height:12em;
 }
 
-
+.info-content {
+padding: 1em;
+font-size: 1em;
+}  
+   .datepicker{
+    clear: both;
+    margin-top: 100em;
+  }
+}
   @media (max-width: 768px) {
   /* Navbar positioning foo */
   .navbar-wrapper {
@@ -179,71 +187,40 @@ position: absolute; top:0; left: 0; width: 100%; height: 100%;
   .featurette-heading {
     font-size: 50px;
   }
-    .map {
-      margin: 0;
-/*       margin-top: 5em; */
-    }
-     .location-info {
-  background-color: gray;
+    
+    .location-image{
+   background-image: url("design_work/west-seattle-market.jpg");
+   background-size: cover;
+   padding: 0;
+   height: 24em;
+   overflow: hidden;
+
+ }
+
+.map{
+height:12em;
+}
+
+.info-content {
+padding: 1em;
+font-size: 1em;
+}
+
+.location-info {
  height: 10em;
-/* font-size: 100%; */
    padding: 0;
 }
 
-.location-info h3 {
-/* margin:0; */
-/* font-size: 100%; */
 
-}
 .location-info h4 {
 margin:0;
 font-size: 100%;
 
 }
-.location-image{
-  background-color: gray;
-  padding: 0;
-  height: 10em;
-  overflow: hidden;
-
-
- }
-.location-image img {
-  width: 100%;
-  object-fit: cover;
-  margin:0;
-}
-
-}
 
 
 }
 
-
-@media (max-width: 991px){
-  
-  .location-info {
-  background-color: gray;
-   height: 10em;
-
-}
-
-.location-image{
-   background-color: gray;
-   padding: 0;
-   height: 20em;
-   overflow: hidden;
-
-
- }
-.location-image img {
-  width: 100%;
-  object-fit: cover;
-  margin:0;
-}
-.featurette-heading {
-    margin-top: 120px;
-  }
   @media (max-width: 480px){
   
   .navbar-wrapper .navbar {
@@ -271,10 +248,3 @@ font-size: 100%;
       
     }
 }
-
-
-
-
-  
-
-

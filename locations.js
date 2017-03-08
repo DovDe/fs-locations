@@ -5,14 +5,14 @@ $(document).ready(function(){
   
   // checking the intial window size to figure out if the carousel needs to be loaded
   // and if the sub nav bar needs to be hidden
- if (window.matchMedia('(min-width: 769px)').matches)  {
+ if (window.matchMedia('(min-width: 991px)').matches)  {
          
     // do functionality on screens larger than 768px
       $(".carousel-container").load('html/carousel.html');  
          
         }else {
           
-       $('.subnav').hide();
+     
           
         } //close if match media
   
@@ -21,15 +21,11 @@ $(document).ready(function(){
   // here I am checking for any resizing of the window
  $( window ).resize(function() {
    
-       if (window.matchMedia('(min-width: 769px)').matches)  {
+       if (window.matchMedia('(min-width: 991px)').matches)  {
          
     // do functionality on screens smaller than 768px
-       $(".carousel-container").load('html/carousel.html');
-             $('.subnav').show();    
-        
-        } else {
-         $('.subnav').hide(); 
-          
+       $(".carousel-container").load('html/carousel.html');                    
+        } else {          
           if ($(".carousel-container")) {
            $("#myCarousel").remove(); 
             
@@ -64,12 +60,7 @@ $(document).ready(function(){
   
  
   // current day value for loading correct day into page.
-var today = new Date();
-var todaysDay = today.getUTCDay();
-  
-  // loading current date
-  var todaysDateLoad = $("<p class='loadDate'></p>").text(" " + today);   
-  $('.visible-location').append(todaysDateLoad);
+
   
   var monthsOfYear= ['January',
             'February',
@@ -93,58 +84,77 @@ var todaysDay = today.getUTCDay();
             'Saturday'
       ];
 
+var today = new Date();
+var todaysDay = today.getUTCDay();
+ var todaysDayName= dayOfWeek[todaysDay];
+
+var todaysMonth = monthsOfYear[today.getUTCMonth()];
+
+  var todaysYear= today.getUTCFullYear();
+  
+  var todaysDateNumber= today.getUTCDate();
 
 
+  // loading current date
+  var dateLoadHeader = $("<h3 class='col-xs-6'></h3>").text("Current showing date:");   
+  var todaysDateLoad = $('<h3 class="col-xs-6 text-left"></h3>').text(todaysDayName+" "+todaysMonth+" "+todaysDateNumber+" "+todaysYear);
+  
+                          
+  $('.visible-location').append(dateLoadHeader);                      
+  $('.visible-location').append(todaysDateLoad);
 
  
      // changing datepicker changes html content
     
     $("#datepicker").on("change",function(){
      var selected = $('input').val();  
-      console.log(selected);
      
       
       var selectedDay =  new Date(selected);
       
       var day =(selectedDay.getUTCDate());
+ 
       var month=(selectedDay.getUTCMonth());
+
       var year = (selectedDay.getUTCFullYear());
+
      
       
       
-      
       var selectedWeekDay = selectedDay.getUTCDay(); 
-      console.log(selectedWeekDay);
       
-      
+      var selectedWeekDayName = dayOfWeek[selectedWeekDay];
+      console.log(selectedWeekDayName);
       
       var selectedMonth = monthsOfYear[month];
       console.log(selectedMonth);
       
+   var selectedDateLoad = $('<h3 class="col-xs-6 text-left"></h3>').text(selectedWeekDayName+" "+selectedMonth+" "+day+" "+year);
+     
+      
+  $('.visible-location').empty()    
       
     if(selectedWeekDay === 0){            
    $(".map-container").load('html/weekdays/sunday.html');
-      $('.visible-location').replaceWith((selectedMonth)+'-'+(day)+'-'+(year));
+      
  }else if (selectedWeekDay===1) {      
    $(".map-container").load('html/weekdays/monday.html');
-    $('.visible-location').replaceWith((selectedMonth)+'-'+(day)+'-'+(year));
  }else if (selectedWeekDay ===2){       
    $(".map-container").load('html/weekdays/tuesday.html');
-   $('.visible-location').replaceWith((selectedMonth)+'-'+(day)+'-'+(year));
  }else if (selectedWeekDay===3) {        
    $(".map-container").load('html/weekdays/wednesday.html');
-   $('.visible-location').replaceWith((selectedMonth)+'-'+(day)+'-'+(year));
  }else if (selectedWeekDay===4) {  
    $(".map-container").load('html/weekdays/thursday.html');
-   $('.visible-location').replaceWith((selectedMonth)+'-'+(day)+'-'+(year));
  }else if (selectedWeekDay===5) {   
    $(".map-container").load('html/weekdays/friday.html');
-   $('.visible-location').replaceWith((selectedMonth)+'-'+(day)+'-'+(year));
  }else{     
-   $(".map-container").load('html/weekdays/saturday.html');
-   $('.visible-location').replaceWith((selectedMonth)+'-'+(day)+'-'+(year));
-  
+   $(".map-container").load('html/weekdays/saturday.html');  
  }
+     
+                          
+  $('.visible-location').append(dateLoadHeader);                      
+  $('.visible-location').append(selectedDateLoad);     
+  
     });
 
   
