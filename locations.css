@@ -1,12 +1,22 @@
 a.navbar-brand img  {
-  max-height: 150%;
-}
+  max-height: 250%;
+  padding-bottom: 0.5em;
+/*    object-fit: contain; */
+  }
+
+ 
+
 footer{
 margin-top: 2em;  
 margin-bottom: 0;
 padding-bottom: 0;
 height: 50px;
-background-color: #3ebe29;  
+background-color: #333; 
+color: whitesmoke;
+
+}
+.copy-right{
+  margin-top: 1em;
 }
 
 /* GLOBAL STYLES
@@ -38,7 +48,10 @@ padding: 0.5em;
 .nav {
   margin-bottom: 1em;
 }
-
+ .location-image img {
+   width: 100%;    
+   object-fit: contain;
+   }
 /* CUSTOMIZE THE NAVBAR
 -------------------------------------------------- */
 
@@ -59,7 +72,7 @@ padding: 0.5em;
 }
 
 .navbar-wrapper .navbar .container {
-/*   width: auto; */
+  width: auto;
   border-bottom:solid #960987 6px;
 }
 
@@ -69,7 +82,6 @@ padding: 0.5em;
   height: 12em;
   overflow: hidden;
 }
-
 
 
 /* CUSTOMIZE THE CAROUSEL
@@ -113,8 +125,8 @@ padding: 0.5em;
 
 
 .location-image{
-   background-image: url("design_work/west-seattle-market.jpg");
-   background-size: cover;
+/*    background-image: url("design_work/west-seattle-market.jpg"); */
+/*    background-size: cover; */
    padding: 0;
    height: 24em;
    overflow: hidden;
@@ -140,7 +152,7 @@ font-size: 1em;
     margin-top: 120px;
   }
 .location-image{
-   background-image: url("design_work/west-seattle-market.jpg");
+/*    background-image: url("design_work/west-seattle-market.jpg"); */
    background-size: cover;
    padding: 0;
    max-height: 15em;
@@ -195,8 +207,8 @@ font-size: 1em;
     margin-top: 120px;
   }
 .location-image{
-   background-image: url("design_work/west-seattle-market.jpg");
-   background-size: cover;
+/*    background-image: url("design_work/west-seattle-market.jpg"); */
+/*    background-size: cover; */
    padding: 0;
    max-height: 15em;
    overflow: hidden;
@@ -235,14 +247,20 @@ font-size: 1em;
     height: 100px;
     width: auto;
   }
-  .location-image img {
+/*   .location-image img {
    height: 100%;    
    object-fit: cover;
-   }
+   } */
     .location-info {
       height:100px;
       
     }
+    a.navbar-brand img  {
+  max-height: 200%;
+  padding-bottom: 0.5em;
+/*    object-fit: contain; */
+  }
+
 }
 .full-screen {
   background-size: cover;
@@ -254,4 +272,13 @@ font-size: 1em;
     margin-top: 1em;
   
 }
- 
+.locations-text{
+  
+  border-top: solid #3ebe29 30px;
+  margin: 0;
+  padding:0;
+/*   width: 100%; */
+}
+.locations-text p{
+  margin-top: 2em;
+} 
