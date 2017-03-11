@@ -55,7 +55,7 @@
     </div><!-- /.carousel -->
 
 
-
+<!--------------this section is to make the carousel a full size image  ----------------------------->
 
 <script>
   var $item = $('.carousel .item'); 
@@ -80,10 +80,11 @@ $(window).on('resize', function (){
 });
 
 $('.carousel').carousel({
-  interval: 6000,
+  interval: 9000,
   pause: "false"
 });
   
+  // scroll down functions
 
   $('.scroll-down').click(function(){
         $('html, body').animate({scrollTop:(($wHeight)-50)},'50');

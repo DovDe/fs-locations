@@ -77,7 +77,8 @@ $(document).ready(function(){
             'October',
             'November',
             'December'];
-      var dayOfWeek = [
+    
+  var dayOfWeek = [
         'Sunday',
             'Monday',
             'Tuesday',
@@ -87,6 +88,8 @@ $(document).ready(function(){
             'Saturday'
       ];
 
+// get todays date   
+  
 var today = new Date();
 var todaysDay = today.getDay();
  var todaysDayName= dayOfWeek[todaysDay];
@@ -102,6 +105,7 @@ var todaysMonth = monthsOfYear[today.getMonth()];
   var dateLoadHeader = $("<h3 class='col-xs-6'></h3>").text("Current showing date:");   
   var todaysDateLoad = $('<h3 class="col-xs-6 text-left"></h3>').text(todaysDayName+" "+todaysMonth+" "+todaysDateNumber+" "+todaysYear);
   
+  // append todays date
                           
   $('.visible-location').append(dateLoadHeader);                      
   $('.visible-location').append(todaysDateLoad);
@@ -111,7 +115,8 @@ var todaysMonth = monthsOfYear[today.getMonth()];
     
     $("#datepicker").on("change",function(){
      var selected = $('input').val();  
-     
+    
+      // this part is for the selected date
       
       var selectedDay =  new Date(selected);
       
@@ -132,11 +137,14 @@ var todaysMonth = monthsOfYear[today.getMonth()];
       var selectedMonth = monthsOfYear[month];
       console.log(selectedMonth);
       
+      // write out selected date
    var selectedDateLoad = $('<h3 class="col-xs-6 text-left"></h3>').text(selectedWeekDayName+" "+selectedMonth+" "+day+" "+year);
      
+     // empty out locations divs
       
   $('.visible-location').empty()    
-      
+     
+  // checking day of week
     if(selectedWeekDay === 0){            
    $(".map-container").load('html/weekdays/sunday.html');
       
@@ -154,7 +162,7 @@ var todaysMonth = monthsOfYear[today.getMonth()];
    $(".map-container").load('html/weekdays/saturday.html');  
  }
      
-                          
+     // loading new content                     
   $('.visible-location').append(dateLoadHeader);                      
   $('.visible-location').append(selectedDateLoad);     
   
