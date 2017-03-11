@@ -21,6 +21,16 @@ color: whitesmoke;
 
 /* GLOBAL STYLES
 -------------------------------------------------- */
+.locations-text{
+  
+  border-top: solid #3ebe29 30px;
+  margin: 0;
+  padding:0;
+/*   width: 100%; */
+}
+.locations-text p{
+  margin-top: 2em;
+} 
 
 .location-1 {
   margin: 1em 0 10em 0;
@@ -237,10 +247,22 @@ font-size: 1em;
   padding-left: 0;
 }
   #datepicker {
-      margin-top: 5em;
+      margin-top: 1em;
+    }
+      .location-info {
+      height:12em;
+      
+    }
+    .info-content{
+      height: 4em;
+    }
+    .info-content p{
+      margin:0;
+      font-size: 0.7em;
     }
   .map {
-    height: 100px;
+    clear: both;
+    height: 7.4em;
   } 
   .location-image {
 
@@ -251,17 +273,29 @@ font-size: 1em;
    height: 100%;    
    object-fit: cover;
    } */
-    .location-info {
-      height:100px;
-      
-    }
+  
     a.navbar-brand img  {
+   clear: both;   
   max-height: 200%;
   padding-bottom: 0.5em;
 /*    object-fit: contain; */
   }
-
+    footer{
+      margin-top:0;
+    }    
+.location-1 {
+  margin: 1em 0 1em 0;
 }
+    .locations-text{
+  
+  border: none;
+  padding:2em;
+/*   width: 100%; */
+}
+
+
+   
+}  /* close @media 480    */
 .full-screen {
   background-size: cover;
   background-position: center;
@@ -272,13 +306,8 @@ font-size: 1em;
     margin-top: 1em;
   
 }
-.locations-text{
-  
-  border-top: solid #3ebe29 30px;
-  margin: 0;
-  padding:0;
-/*   width: 100%; */
-}
-.locations-text p{
-  margin-top: 2em;
-} 
+
+
+
+
+
