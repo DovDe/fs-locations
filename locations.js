@@ -1,7 +1,8 @@
 $(document).ready(function(){
   
+//------------------------carousel sizing and loading-----------------  
   
-//------------------------carousel and subnav sizing and loading-----------------  
+  
   
   // checking the intial window size to figure out if the carousel needs to be loaded
   // and if the sub nav bar needs to be hidden
@@ -9,7 +10,8 @@ $(document).ready(function(){
          
     // do functionality on screens larger than 768px
       $(".carousel-container").load('html/carousel.html');  
-         
+    
+
         }else {
           
      
@@ -24,7 +26,8 @@ $(document).ready(function(){
        if (window.matchMedia('(min-width: 991px)').matches)  {
          
     // do functionality on screens smaller than 768px
-       $(".carousel-container").load('html/carousel.html');                    
+       $(".carousel-container").load('html/carousel.html');
+
         } else {          
           if ($(".carousel-container")) {
            $("#myCarousel").remove(); 
@@ -85,14 +88,14 @@ $(document).ready(function(){
       ];
 
 var today = new Date();
-var todaysDay = today.getUTCDay();
+var todaysDay = today.getDay();
  var todaysDayName= dayOfWeek[todaysDay];
 
-var todaysMonth = monthsOfYear[today.getUTCMonth()];
+var todaysMonth = monthsOfYear[today.getMonth()];
 
-  var todaysYear= today.getUTCFullYear();
+  var todaysYear= today.getFullYear();
   
-  var todaysDateNumber= today.getUTCDate();
+  var todaysDateNumber= today.getDate();
 
 
   // loading current date
@@ -172,17 +175,19 @@ var todaysMonth = monthsOfYear[today.getUTCMonth()];
    $(".map-container").load('html/weekdays/thursday.html');
  }else if (todaysDay===5) {
    $(".map-container").load('html/weekdays/friday.html');
- }else{
+ }else if (todaysDay===6) {
    $(".map-container").load('html/weekdays/saturday.html');
  }
          
+
+   
+  
+ 
   
 }); //close document ready
 
 
     
-
-
 
 
 
